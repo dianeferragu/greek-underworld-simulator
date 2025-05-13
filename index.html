@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Greek Underworld Adventure</title>
+    <title>Greek and Roman Underworld Adventure</title>
     <meta name="author" content="Your Name">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1 style="text-align:center">Choose Your Own Adventure: Greek Underworld</h1>
+    <h1 style="text-align:center">Choose Your Own Adventure: Greek and Roman Underworld</h1>
     <div id="options">
         <p>Select an Underworld:</p>
         <button onclick="chooseUnderworld('aeneid')">Aeneid</button>
         <button onclick="chooseUnderworld('odyssey')">Odyssey</button>
     </div>
     <div id="choices" class="hidden"></div>
+    <div id="result" class="hidden"></div>
+    <button id="restart" class="hidden" onclick="restartGame()">Restart Game</button>
     <footer>
         <p style="text-align:center;font-size:small;">Design and source code inspired by various examples.</p>
     </footer>
