@@ -17,6 +17,12 @@ main {
     margin: 20px 0;
 }
 
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
 button {
     margin: 5px;
     padding: 10px;
@@ -30,7 +36,11 @@ button:hover {
     background-color: #0056b3;
 }
 
-#info {
+.hidden {
+    display: none;
+}
+
+#choices {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
