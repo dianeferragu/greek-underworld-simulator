@@ -8,26 +8,16 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <table style="width:100%;max-width:800px;margin:auto;">
-        <tbody>
-            <tr>
-                <td style="padding:2.5%;vertical-align:middle">
-                    <h1 style="text-align:center">Choose Your Own Adventure: Greek Underworld</h1>
-                    <p>Select a character to begin your adventure:</p>
-                    <button onclick="startAdventure('hercules')">Hercules</button>
-                    <button onclick="startAdventure('orpheus')">Orpheus</button>
-                    <button onclick="startAdventure('persephone')">Persephone</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    
+    <h1 style="text-align:center">Choose Your Own Adventure: Greek Underworld</h1>
+    <div id="options">
+        <p>Select an Underworld:</p>
+        <button onclick="chooseUnderworld('aeneid')">Aeneid</button>
+        <button onclick="chooseUnderworld('odyssey')">Odyssey</button>
+    </div>
     <div id="choices" class="hidden"></div>
-
     <footer>
         <p style="text-align:center;font-size:small;">Design and source code inspired by various examples.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

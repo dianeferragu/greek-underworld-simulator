@@ -86,3 +86,138 @@ function persephoneChoice(action) {
         choicesDiv.innerHTML = "<p>You return to the surface, bringing spring with you, but you must return to the underworld each year.</p>";
     }
 }
+
+function chooseUnderworld(underworld) {
+    const optionsDiv = document.getElementById('options');
+    const choicesDiv = document.getElementById('choices');
+    optionsDiv.classList.add('hidden');
+    choicesDiv.classList.remove('hidden');
+
+    let characterChoices = '';
+
+    if (underworld === 'aeneid') {
+        characterChoices = `
+            <h3>You chose the Aeneid. Select a character:</h3>
+            <button onclick="chooseCharacter('anchises')">Anchises</button>
+            <button onclick="chooseCharacter('dido')">Dido</button>
+            <button onclick="chooseCharacter('sibyl')">Sibyl</button>
+        `;
+    } else {
+        characterChoices = `
+            <h3>You chose the Odyssey. Select a character:</h3>
+            <button onclick="chooseCharacter('tiresias')">Tiresias</button>
+            <button onclick="chooseCharacter('achilles')">Achilles</button>
+            <button onclick="chooseCharacter('anticlea')">Anticlea</button>
+        `;
+    }
+
+    choicesDiv.innerHTML = characterChoices;
+}
+
+function chooseCharacter(character) {
+    const choicesDiv = document.getElementById('choices');
+    let storyText = '';
+    let choices = '';
+
+    switch (character) {
+        case 'anchises':
+            storyText = "You are Anchises, guiding Aeneas. Do you:";
+            choices = `
+                <button onclick="anchisesChoice('guide')">Guide Aeneas</button>
+                <button onclick="anchisesChoice('warn')">Warn him of dangers</button>
+            `;
+            break;
+        case 'dido':
+            storyText = "You are Dido, queen of Carthage. Do you:";
+            choices = `
+                <button onclick="didoChoice('love')">Pursue love</button>
+                <button onclick="didoChoice('revenge')">Seek revenge</button>
+            `;
+            break;
+        case 'sibyl':
+            storyText = "You are the Sibyl, the prophetess. Do you:";
+            choices = `
+                <button onclick="sibylChoice('foretell')">Foretell the future</button>
+                <button onclick="sibylChoice('silence')">Remain silent</button>
+            `;
+            break;
+        case 'tiresias':
+            storyText = "You are Tiresias, the blind prophet. Do you:";
+            choices = `
+                <button onclick="tiresiasChoice('advise')">Advise Odysseus</button>
+                <button onclick="tiresiasChoice('warn')">Warn him of dangers</button>
+            `;
+            break;
+        case 'achilles':
+            storyText = "You are Achilles, the great warrior. Do you:";
+            choices = `
+                <button onclick="achillesChoice('fight')">Fight for glory</button>
+                <button onclick="achillesChoice('retreat')">Retreat from battle</button>
+            `;
+            break;
+        case 'anticlea':
+            storyText = "You are Anticlea, Odysseus' mother. Do you:";
+            choices = `
+                <button onclick="anticleaChoice('reveal')">Reveal secrets</button>
+                <button onclick="anticleaChoice('comfort')">Comfort Odysseus</button>
+            `;
+            break;
+    }
+
+    choicesDiv.innerHTML = `<h3>${storyText}</h3>${choices}`;
+}
+
+// Define character choice functions here
+function anchisesChoice(action) {
+    const choicesDiv = document.getElementById('choices');
+    if (action === 'guide') {
+        choicesDiv.innerHTML = "<p>You guide Aeneas to his destiny, ensuring the future of Rome!</p>";
+    } else {
+        choicesDiv.innerHTML = "<p>You warn him of the dangers ahead, but he must face them alone.</p>";
+    }
+}
+
+function didoChoice(action) {
+    const choicesDiv = document.getElementById('choices');
+    if (action === 'love') {
+        choicesDiv.innerHTML = "<p>You pursue love, but it leads to heartbreak and tragedy.</p>";
+    } else {
+        choicesDiv.innerHTML = "<p>You seek revenge, but it consumes you.</p>";
+    }
+}
+
+function sibylChoice(action) {
+    const choicesDiv = document.getElementById('choices');
+    if (action === 'foretell') {
+        choicesDiv.innerHTML = "<p>You foretell the future, guiding heroes with your wisdom.</p>";
+    } else {
+        choicesDiv.innerHTML = "<p>Your silence leaves many questions unanswered.</p>";
+    }
+}
+
+function tiresiasChoice(action) {
+    const choicesDiv = document.getElementById('choices');
+    if (action === 'advise') {
+        choicesDiv.innerHTML = "<p>Your advice helps Odysseus navigate the challenges ahead.</p>";
+    } else {
+        choicesDiv.innerHTML = "<p>Your warning goes unheeded, leading to dire consequences.</p>";
+    }
+}
+
+function achillesChoice(action) {
+    const choicesDiv = document.getElementById('choices');
+    if (action === 'fight') {
+        choicesDiv.innerHTML = "<p>You fight valiantly, earning eternal glory.</p>";
+    } else {
+        choicesDiv.innerHTML = "<p>You retreat, but your legacy is forever tarnished.</p>";
+    }
+}
+
+function anticleaChoice(action) {
+    const choicesDiv = document.getElementById('choices');
+    if (action === 'reveal') {
+        choicesDiv.innerHTML = "<p>You reveal secrets that change Odysseus' fate.</p>";
+    } else {
+        choicesDiv.innerHTML = "<p>You comfort him, providing the strength he needs to continue.</p>";
+    }
+}
