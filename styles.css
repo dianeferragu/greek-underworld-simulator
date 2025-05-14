@@ -53,6 +53,12 @@ button:hover {
     background: rgba(255, 255, 255, 0.1); /* Light background for character divs */
     border-radius: 10px; /* Rounded corners */
     width: 200px; /* Fixed width for character divs */
+    text-align: center; /* Center text in character divs */
+}
+
+#characters img {
+    width: 100%; /* Make images responsive */
+    border-radius: 5px; /* Rounded corners for images */
 }
 
 #story-text {

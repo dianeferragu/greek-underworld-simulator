@@ -2,13 +2,14 @@ const characters = [
     {
         name: "Dido",
         description: "Queen of Carthage, forsaken by Aeneas, seeking closure or vengeance.",
+        image: "dido.png",
         story: [
             {
                 text: "You sit beneath the myrtle trees, still haunted by Aeneas’s face. Do you…?",
                 choices: [
                     { text: "Call on the Furies to curse him further", next: 1 },
                     { text: "Walk to the banks of Lethe to forget", next: 2 },
-                    { text: "Speak to fellow betrayed souls", next: 3 }
+                    { text: "Speak to fellow betrayed souls (e.g., Phaedra, Eriphyle)", next: 3 }
                 ]
             },
             {
@@ -56,6 +57,7 @@ const characters = [
     {
         name: "Anchises",
         description: "Aeneas’s father, now a soul in Elysium with knowledge of Rome’s future.",
+        image: "anchises.png",
         story: [
             {
                 text: "You see the unborn souls of Rome beyond Lethe. Do you…?",
@@ -110,6 +112,7 @@ const characters = [
     {
         name: "The Sibyl",
         description: "Prophetic priestess of Apollo, guides heroes through the dark.",
+        image: "sibyl.png",
         story: [
             {
                 text: "Aeneas hesitates at the cave’s mouth. Do you…",
@@ -164,6 +167,7 @@ const characters = [
     {
         name: "Achilles",
         description: "Once the greatest Greek warrior, now dwelling in the fields of Asphodel.",
+        image: "achilles.png",
         story: [
             {
                 text: "Odysseus speaks of your son Neoptolemus. Do you…",
@@ -218,6 +222,7 @@ const characters = [
     {
         name: "Tiresias",
         description: "Blind prophet, consulted by Odysseus to learn his fate.",
+        image: "tiresias.png",
         story: [
             {
                 text: "Odysseus calls you again. Do you…",
@@ -272,6 +277,7 @@ const characters = [
     {
         name: "Anticlea",
         description: "Odysseus’s mother, bearer of familial wisdom and personal sorrow.",
+        image: "anticlea.png",
         story: [
             {
                 text: "Odysseus embraces you. Do you…",
@@ -340,6 +346,7 @@ function displayCharacters() {
         const characterDiv = document.createElement('div');
         characterDiv.innerHTML = `
             <h3>${character.name}</h3>
+            <img src="${character.image}" alt="${character.name}">
             <p>${character.description}</p>
             <button onclick="selectCharacter(${index})">Select</button>
         `;
