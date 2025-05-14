@@ -1,27 +1,30 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Greek and Roman Underworld Adventure</title>
-    <meta name="author" content="Your Name">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Through the Underworld</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 style="text-align:center">Choose Your Own Adventure: Greek and Roman Underworld</h1>
-    <div id="options">
-        <p>Select an Underworld:</p>
-        <button onclick="chooseUnderworld('aeneid')">Aeneid</button>
-        <button onclick="chooseUnderworld('odyssey')">Odyssey</button>
+    <div id="game-container">
+        <div id="intro">
+            <h1>Journey Through the Underworld: A Greco-Roman Adventure</h1>
+            <h2>Based on Homer’s Odyssey and Virgil’s Aeneid</h2>
+            <button id="start-button">Start Your Journey</button>
+        </div>
+        <div id="character-selection" class="hidden">
+            <h2>Select Your Character</h2>
+            <div id="characters"></div>
+        </div>
+        <div id="story" class="hidden">
+            <div id="story-text"></div>
+            <div id="choices"></div>
+        </div>
     </div>
-    <div id="choices" class="hidden"></div>
-    <div id="result" class="hidden"></div>
-    <button id="restart" class="hidden" onclick="restartGame()">Restart Game</button>
-    <footer>
-        <p style="text-align:center;font-size:small;">AIS Classics and Ancient Mediterranean Studies: Knowledge Assessment #4 Option 1 Diane Ferragu
-            
-        </p>
-    </footer>
+    <audio id="background-music" loop>
+        <source src="ambient.mp3" type="audio/mpeg">
+    </audio>
     <script src="script.js"></script>
 </body>
 </html>

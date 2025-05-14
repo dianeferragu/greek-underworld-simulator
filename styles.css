@@ -1,48 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Georgia', serif;
+    background-image: url('underworld.webp'); /* Background image for the game */
+    background-size: cover; /* Cover the entire background */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-main {
-    margin: 20px 0;
-}
-
-table {
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-}
-
-button {
-    margin: 5px;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
+#game-container {
+    padding: 20px; /* Padding around the game container */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px; /* Maximum width of the container */
+    margin: auto; /* Center the container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 
 .hidden {
-    display: none;
+    display: none; /* Hide elements with this class */
 }
 
-#choices, #result {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background: #fff;
+h1, h2 {
+    margin: 10px 0; /* Margin for headings */
+}
+
+button {
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size for buttons */
+    margin: 10px; /* Margin around buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #444; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+    background-color: #666; /* Change background color on hover */
+}
+
+#characters {
+    display: flex; /* Use flexbox for character display */
+    flex-wrap: wrap; /* Allow wrapping of character elements */
+    justify-content: center; /* Center align character elements */
+}
+
+#characters div {
+    margin: 10px; /* Margin around each character */
+    padding: 10px; /* Padding inside character divs */
+    background: rgba(255, 255, 255, 0.1); /* Light background for character divs */
+    border-radius: 10px; /* Rounded corners */
+    width: 200px; /* Fixed width for character divs */
+}
+
+#story-text {
+    margin: 20px 0; /* Margin for story text */
+    font-size: 18px; /* Font size for story text */
+}
+
+#choices {
+    margin-top: 20px; /* Margin above choices */
 }
