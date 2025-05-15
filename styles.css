@@ -1,8 +1,9 @@
 body {
     font-family: 'Georgia', serif;
-    background-image: url('underworld.webp'); /* Background image for the game */
-    background-size: cover; /* Cover the entire background */
-    color: white; /* Text color */
+    background-image: url('Photos/underworld.webp'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    color: white; /* Adjust text color for better visibility */
     text-align: center; /* Center align text */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -68,4 +69,11 @@ button:hover {
 
 #choices {
     margin-top: 20px; /* Margin above choices */
+}
+
+.character-selection {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
+    padding: 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
 }
