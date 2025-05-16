@@ -183,21 +183,77 @@ const characters = {
         image: "Photos/dido.png",
         prompts: [
             "You sit beneath the myrtle trees, still haunted by Aeneas's face. Do you…?",
-            // Add more prompts here
+            "Aeneas's shadow passes near. He looks at you. Do you…?",
+            "A Harpy delivers a message from Sychaeus. Do you…?",
+            // Add more prompts for Dido
         ]
     },
-    // Add other characters similarly
+    anchises: {
+        image: "Photos/anchises.png",
+        prompts: [
+            "You stand in Elysium, surrounded by golden fields. Do you…?",
+            "A spirit approaches you. Do you…?",
+            // Add more prompts for Anchises
+        ]
+    },
+    sibyl: {
+        image: "Photos/sibyl.png",
+        prompts: [
+            "You stand at the entrance of the Underworld. Do you…?",
+            "A dark path lies ahead. Do you…?",
+            // Add more prompts for Sibyl
+        ]
+    },
+    tiresias: {
+        image: "Photos/tiresias.png",
+        prompts: [
+            "You sit in the Asphodel fields. Do you…?",
+            "A traveler approaches. Do you…?",
+            // Add more prompts for Tiresias
+        ]
+    },
+    achilles: {
+        image: "Photos/achilles.png",
+        prompts: [
+            "You wander the fields of Asphodel. Do you…?",
+            "A challenge arises. Do you…?",
+            // Add more prompts for Achilles
+        ]
+    },
+    anticlea: {
+        image: "Photos/anticlea.png",
+        prompts: [
+            "You find yourself in a familiar place. Do you…?",
+            "A memory surfaces. Do you…?",
+            // Add more prompts for Anticlea
+        ]
+    }
 };
 
 function loadCharacterPrompts(character) {
     const characterData = characters[character];
     document.getElementById("characterImage").src = characterData.image;
+    document.getElementById("characterImage").style.display = "block";
     // Load prompts and other logic here
 }
 
 // Event listeners for buttons
 document.getElementById("didoButton").addEventListener("click", function() {
-    startAdventure("dido");
+    loadCharacterPrompts("dido");
 });
-// Repeat for other characters
+document.getElementById("anchisesButton").addEventListener("click", function() {
+    loadCharacterPrompts("anchises");
+});
+document.getElementById("sibylButton").addEventListener("click", function() {
+    loadCharacterPrompts("sibyl");
+});
+document.getElementById("tiresiasButton").addEventListener("click", function() {
+    loadCharacterPrompts("tiresias");
+});
+document.getElementById("achillesButton").addEventListener("click", function() {
+    loadCharacterPrompts("achilles");
+});
+document.getElementById("anticleaButton").addEventListener("click", function() {
+    loadCharacterPrompts("anticlea");
+});
   
