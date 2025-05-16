@@ -29,7 +29,7 @@ const adventures = {
                 }
             },
             C: {
-                prompt: "Follow the path toward Sychaeus’s soul.",
+                prompt: "Follow the path toward Sychaeus's soul.",
                 next: {
                     C1: {
                         prompt: "You find him waiting. Do you…",
@@ -73,7 +73,7 @@ const adventures = {
                     F1: {
                         prompt: "Persephone answers your cry. Do you…",
                         choices: {
-                            F1a: "Ask to be judge of men’s hearts.",
+                            F1a: "Ask to be judge of men's hearts.",
                             F1b: "Beg for your own peace.",
                             F1c: "Request that Carthage rise again."
                         }
@@ -87,7 +87,7 @@ const adventures = {
                         prompt: "A shade of a young girl approaches, weeping. Do you…",
                         choices: {
                             G1a: "Embrace her and tell your story.",
-                            G1b: "Lead her away from Aeneas’s path.",
+                            G1b: "Lead her away from Aeneas's path.",
                             G1c: "Swear to protect her forever."
                         }
                     }
@@ -128,7 +128,7 @@ const adventures = {
                 prompt: "Call out to the spirit of Augustus.",
                 next: {
                     C1: {
-                        prompt: "The soul of Rome’s future emperor stirs. Do you…",
+                        prompt: "The soul of Rome's future emperor stirs. Do you…",
                         choices: {
                             C1a: "Bless him with wisdom.",
                             C1b: "Warn him of pride.",
@@ -143,8 +143,8 @@ const adventures = {
                     D1: {
                         prompt: "They await in noble sorrow. Do you…",
                         choices: {
-                            D1a: "Speak of Troy’s fall again.",
-                            D1b: "Tell them of Aeneas’s journey.",
+                            D1a: "Speak of Troy's fall again.",
+                            D1b: "Tell them of Aeneas's journey.",
                             D1c: "Ask if it was all worth it."
                         }
                     }
@@ -164,13 +164,13 @@ const adventures = {
                 }
             },
             F: {
-                prompt: "Gaze upon Dido’s ghost.",
+                prompt: "Gaze upon Dido's ghost.",
                 next: {
                     F1: {
                         prompt: "She burns still with silence. Do you…",
                         choices: {
-                            F1a: "Apologize for your son’s betrayal.",
-                            F1b: "Justify Aeneas’s mission.",
+                            F1a: "Apologize for your son's betrayal.",
+                            F1b: "Justify Aeneas's mission.",
                             F1c: "Offer her remembrance in Roman rites."
                         }
                     }
@@ -226,15 +226,15 @@ const adventures = {
                     C1: {
                         prompt: "Your voice is soft as leaves. Do you…",
                         choices: {
-                            C1a: "Tell him of Lavinia’s future.",
-                            C1b: "Speak of Dido’s soul.",
+                            C1a: "Tell him of Lavinia's future.",
+                            C1b: "Speak of Dido's soul.",
                             C1c: "Foretell the death of Turnus."
                         }
                     }
                 }
             },
             D: {
-                prompt: "Challenge Apollo’s hold on your body.",
+                prompt: "Challenge Apollo's hold on your body.",
                 next: {
                     D1: {
                         prompt: "The god tightens his grip. Do you…",
@@ -266,7 +266,7 @@ const adventures = {
                         prompt: "You dig into the obsidian wall. Do you…",
                         choices: {
                             F1a: "Bury the prophecies you hate.",
-                            F1b: "Hide your visions of Rome’s end.",
+                            F1b: "Hide your visions of Rome's end.",
                             F1c: "Seal the names of unborn heroes."
                         }
                     }
@@ -279,7 +279,7 @@ const adventures = {
                         prompt: "A Roman soul waits by the Lethe. Do you…",
                         choices: {
                             G1a: "Speak to Caesar.",
-                            G1b: "Speak to Camilla’s unborn shade.",
+                            G1b: "Speak to Camilla's unborn shade.",
                             G1c: "Speak to the weeping mother of a future general."
                         }
                     }
@@ -309,8 +309,8 @@ const adventures = {
                     B1: {
                         prompt: "You speak the whole truth. Do you…",
                         choices: {
-                            B1a: "Emphasize the suitors’ deaths.",
-                            B1b: "Warn of Poseidon’s wrath.",
+                            B1a: "Emphasize the suitors' deaths.",
+                            B1b: "Warn of Poseidon's wrath.",
                             B1c: "Tell of his lonely journey ahead."
                         }
                     }
@@ -335,7 +335,7 @@ const adventures = {
                     D1: {
                         prompt: "You kneel in the dark. Do you…",
                         choices: {
-                            D1a: "Listen for Persephone’s voice.",
+                            D1a: "Listen for Persephone's voice.",
                             D1b: "Call upon Hades himself.",
                             D1c: "Wait for an omen in silence."
                         }
@@ -392,7 +392,7 @@ const adventures = {
                     A1: {
                         prompt: "Odysseus praises his strength. Do you…",
                         choices: {
-                            A1a: "Weep for your son’s bloodlust.",
+                            A1a: "Weep for your son's bloodlust.",
                             A1b: "Boast of his victories.",
                             A1c: "Wish you had raised him yourself."
                         }
@@ -471,7 +471,7 @@ const adventures = {
                         prompt: "Time passes slowly. Do you…",
                         choices: {
                             G1a: "Watch other shades move past.",
-                            G1b: "Carve memories into the tree’s bark.",
+                            G1b: "Carve memories into the tree's bark.",
                             G1c: "Let your spear turn to dust."
                         }
                     }
@@ -489,7 +489,7 @@ const adventures = {
                         prompt: "He rushes toward you. Do you…",
                         choices: {
                             A1a: "Try to embrace him.",
-                            A1b: "Smile and recount home’s stories.",
+                            A1b: "Smile and recount home's stories.",
                             A1c: "Warn him about the suitors."
                         }
                     }
@@ -509,7 +509,7 @@ const adventures = {
                 }
             },
             C: {
-                prompt: "Speak of Penelope’s faithfulness.",
+                prompt: "Speak of Penelope's faithfulness.",
                 next: {
                     C1: {
                         prompt: "Odysseus listens carefully. Do you…",
@@ -529,7 +529,7 @@ const adventures = {
                         choices: {
                             D1a: "Press him for detail.",
                             D1b: "Smile and say you saw him in dreams.",
-                            D1c: "Lament never meeting the man he’s become."
+                            D1c: "Lament never meeting the man he's become."
                         }
                     }
                 }
@@ -577,14 +577,41 @@ const adventures = {
     }
 };
 
-// Function to display the opening prompt and choices for a character
-function displayCharacterChoices(character) {
+function loadCharacterPrompts(character) {
     const adventure = adventures[character];
-    console.log(adventure.openingPrompt);
+    
+    // Clear the character selection area
+    document.getElementById("characterSelection").innerHTML = '';
+
+    // Display the opening prompt
+    const promptElement = document.createElement('h2');
+    promptElement.textContent = adventure.openingPrompt;
+    document.getElementById("characterSelection").appendChild(promptElement);
+
+    // Display choices
     for (const choice in adventure.choices) {
-        console.log(`${choice}: ${adventure.choices[choice].prompt}`);
+        const choiceElement = document.createElement('div');
+        choiceElement.innerHTML = `<strong>${choice}:</strong> ${adventure.choices[choice].prompt}`;
+        document.getElementById("characterSelection").appendChild(choiceElement);
     }
 }
 
-// Example call to display Dido's choices
-displayCharacterChoices('dido');
+// Event listeners for buttons
+document.getElementById("didoButton").addEventListener("click", function() {
+    loadCharacterPrompts("dido");
+});
+document.getElementById("achillesButton").addEventListener("click", function() {
+    loadCharacterPrompts("achilles");
+});
+document.getElementById("anchisesButton").addEventListener("click", function() {
+    loadCharacterPrompts("anchises");
+});
+document.getElementById("anticleaButton").addEventListener("click", function() {
+    loadCharacterPrompts("anticlea");
+});
+document.getElementById("sibylButton").addEventListener("click", function() {
+    loadCharacterPrompts("sibyl");
+});
+document.getElementById("tiresiasButton").addEventListener("click", function() {
+    loadCharacterPrompts("tiresias");
+});
