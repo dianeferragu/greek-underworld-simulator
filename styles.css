@@ -1,11 +1,4 @@
 body {
-    font-family: 'Georgia', serif;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-}
-
-#background {
     background-image: url('Photos/underworld.webp'); /* Ensure this path is correct */
     background-size: cover;
     padding: 50px;
