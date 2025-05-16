@@ -16,12 +16,24 @@ h1, h2 {
     font-family: 'Times New Roman', serif;
 }
 
+.character {
+    display: inline-block;
+    width: 200px; /* Adjust as needed */
+    margin: 20px;
+    text-align: center;
+}
+
+.character img {
+    width: 100%; /* Adjust to fit the container */
+    height: auto;
+}
+
 button {
     background-color: #444;
     color: white;
     border: none;
     padding: 15px 30px;
-    margin: 10px;
+    margin-top: 10px;
     cursor: pointer;
     font-size: 16px;
 }

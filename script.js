@@ -184,7 +184,6 @@ const characters = {
         prompts: [
             "You sit beneath the myrtle trees, still haunted by Aeneas's face. Do you…?",
             "Aeneas's shadow passes near. He looks at you. Do you…?",
-            "A Harpy delivers a message from Sychaeus. Do you…?",
             // Add more prompts for Dido
         ]
     },
@@ -192,7 +191,6 @@ const characters = {
         image: "Photos/anchises.png",
         prompts: [
             "You stand in Elysium, surrounded by golden fields. Do you…?",
-            "A spirit approaches you. Do you…?",
             // Add more prompts for Anchises
         ]
     },
@@ -234,7 +232,14 @@ function loadCharacterPrompts(character) {
     const characterData = characters[character];
     document.getElementById("characterImage").src = characterData.image;
     document.getElementById("characterImage").style.display = "block";
-    // Load prompts and other logic here
+    
+    // Load the first prompt
+    displayPrompt(characterData.prompts[0]);
+}
+
+function displayPrompt(prompt) {
+    // Logic to display the prompt and choices
+    // For example, you can create buttons for choices based on the prompt
 }
 
 // Event listeners for buttons
