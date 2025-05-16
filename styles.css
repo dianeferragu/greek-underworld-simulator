@@ -6,33 +6,44 @@ body {
 }
 
 #background {
-    background-image: url('Photos/underworld.webp'); /* Background image */
+    background-image: url('Photos/underworld.webp'); /* Ensure this path is correct */
     background-size: cover;
     padding: 50px;
     opacity: 0.9;
+    height: 100vh; /* Ensure it covers the full height */
 }
 
 h1, h2 {
     font-family: 'Times New Roman', serif;
 }
 
+#characterSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .character {
-    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: 1px solid #fff;
+    border-radius: 10px;
     width: 200px; /* Adjust as needed */
     margin: 20px;
+    padding: 10px;
     text-align: center;
 }
 
 .character img {
     width: 100%; /* Adjust to fit the container */
     height: auto;
+    border-radius: 10px; /* Rounded corners for images */
 }
 
 button {
     background-color: #444;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
     font-size: 16px;
