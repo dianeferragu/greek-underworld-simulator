@@ -178,3 +178,26 @@ const extendedStoryPaths = {
     }
   };
   
+const characters = {
+    dido: {
+        image: "Photos/dido.png",
+        prompts: [
+            "You sit beneath the myrtle trees, still haunted by Aeneas's face. Do you…?",
+            // Add more prompts here
+        ]
+    },
+    // Add other characters similarly
+};
+
+function loadCharacterPrompts(character) {
+    const characterData = characters[character];
+    document.getElementById("characterImage").src = characterData.image;
+    // Load prompts and other logic here
+}
+
+// Event listeners for buttons
+document.getElementById("didoButton").addEventListener("click", function() {
+    startAdventure("dido");
+});
+// Repeat for other characters
+  
