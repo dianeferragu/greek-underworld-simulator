@@ -1,4 +1,7 @@
 body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
     background-image: url('Photos/underworld.webp'); /* Ensure this path is correct */
     background-size: cover;
     padding: 50px;
@@ -17,7 +20,7 @@ h1, h2 {
 }
 
 .character {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     border: 1px solid #fff;
     border-radius: 10px;
     width: 200px; /* Adjust as needed */
@@ -98,4 +101,18 @@ button:hover {
     padding: 20px; /* Add some padding */
     border-radius: 10px; /* Rounded corners */
     text-align: center; /* Center the text */
+}
+
+#background {
+    background-image: url('Photos/underworld.webp'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    height: 100vh; /* Full height */
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
 }
