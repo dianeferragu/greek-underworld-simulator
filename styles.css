@@ -106,16 +106,6 @@ button:hover {
     text-align: center; /* Center the text */
 }
 
-#background {
-    background-image: url('Photos/underworld.webp'); /* Ensure this path is correct */
-    background-size: cover;
-    background-position: center;
-    padding: 50px;
-    height: 100vh; /* Full height */
-    color: white;
-    text-align: center;
-}
-
 h1 {
     margin-bottom: 20px;
 }

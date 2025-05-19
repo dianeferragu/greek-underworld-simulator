@@ -10,45 +10,19 @@
     <div id="background">
         <h1>Journey Through the Underworld: A Greco-Roman Adventure</h1>
         <h2>Based on Homer's Odyssey and Virgil's Aeneid</h2>
-        <div id="characterSelection">
-            <div class="character">
-                <img src="Photos/dido.png" alt="Dido">
-                <h3>Dido</h3>
-                <p>Queen of Carthage, forsaken by Aeneas, seeking closure or vengeance.</p>
-                <button id="didoButton">Select Dido</button>
-            </div>
-            <div class="character">
-                <img src="Photos/anchises.png" alt="Anchises">
-                <h3>Anchises</h3>
-                <p>Aeneas's father, now a soul in Elysium with knowledge of Rome's future.</p>
-                <button id="anchisesButton">Select Anchises</button>
-            </div>
-            <div class="character">
-                <img src="Photos/sibyl.png" alt="The Sibyl">
-                <h3>The Sibyl</h3>
-                <p>Prophetic priestess of Apollo, guides heroes through the dark.</p>
-                <button id="sibylButton">Select Sibyl</button>
-            </div>
-            <div class="character">
-                <img src="Photos/tiresias.png" alt="Tiresias">
-                <h3>Tiresias</h3>
-                <p>Blind prophet, consulted by Odysseus to learn his fate.</p>
-                <button id="tiresiasButton">Select Tiresias</button>
-            </div>
-            <div class="character">
-                <img src="Photos/achilles.png" alt="Achilles">
-                <h3>Achilles</h3>
-                <p>Once the greatest Greek warrior, now dwelling in the fields of Asphodel.</p>
-                <button id="achillesButton">Select Achilles</button>
-            </div>
-            <div class="character">
-                <img src="Photos/anticlea.png" alt="Anticlea">
-                <h3>Anticlea</h3>
-                <p>Odysseus's mother, bearer of familial wisdom and personal sorrow.</p>
-                <button id="anticleaButton">Select Anticlea</button>
-            </div>
+        <div id="character-selection">
+            <button id="anticleaButton">Select Anticlea</button>
+            <button id="didoButton">Select Dido</button>
+            <button id="achillesButton">Select Achilles</button>
+            <button id="anchisesButton">Select Anchises</button>
+            <button id="sibylButton">Select Sibyl</button>
         </div>
         <img id="characterImage" src="" alt="Character Image" style="display:none;">
+    </div>
+    <div id="journey" style="display: none;">
+        <h2 id="journey-title"></h2>
+        <p id="journey-text"></p>
+        <div id="choices"></div>
     </div>
     <script src="script.js"></script>
 </body>

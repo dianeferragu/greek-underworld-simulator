@@ -1,3 +1,16 @@
+function displayPrompt(prompt) {
+    document.getElementById("journey-title").innerText = prompt.text; // Set the prompt text
+    const choicesDiv = document.getElementById("choices");
+    choicesDiv.innerHTML = ""; // Clear previous choices
+
+    prompt.choices.forEach(choice => {
+        const button = document.createElement("button");
+        button.innerText = choice.text; // Set button text
+        button.onclick = () => handleChoice(choice.next); // Set up the choice handler
+        choicesDiv.appendChild(button); // Add button to the choices div
+    });
+}
+
 const journeys = {
         anchises: {
             title: "Anchises' Journey",
@@ -763,53 +776,6 @@ const journeys = {
     },
 };
 
-function loadCharacterPrompts(character) {
-    const adventure = adventures[character];
-    
-    // Clear the character selection area
-    document.getElementById("characterSelection").innerHTML = '';
-
-    // Display the opening prompt
-    const promptElement = document.createElement('h2');
-    promptElement.textContent = adventure.openingPrompt;
-    document.getElementById("characterSelection").appendChild(promptElement);
-
-    // Display choices
-    for (const choice in adventure.choices) {
-        const choiceElement = document.createElement('div');
-        choiceElement.innerHTML = `<strong>${choice}:</strong> ${adventure.choices[choice].prompt}`;
-        document.getElementById("characterSelection").appendChild(choiceElement);
-    }
-}
-
-// Event listeners for buttons
-document.getElementById("didoButton").addEventListener("click", function() {
-    loadCharacterPrompts("dido");
-});
-document.getElementById("achillesButton").addEventListener("click", function() {
-    loadCharacterPrompts("achilles");
-});
-document.getElementById("anchisesButton").addEventListener("click", function() {
-    loadCharacterPrompts("anchises");
-});
-document.getElementById("anticleaButton").addEventListener("click", function() {
-    loadCharacterPrompts("anticlea");
-});
-document.getElementById("sibylButton").addEventListener("click", function() {
-    loadCharacterPrompts("sibyl");
-});
-document.getElementById("tiresiasButton").addEventListener("click", function() {
-    loadCharacterPrompts("tiresias");
-});
-
-// Assuming you have a global variable to track the current character
-let currentCharacter = '';
-
-document.getElementById("anticleaButton").addEventListener("click", function() {
-    currentCharacter = 'anticlea'; // Set the current character
-    startJourney(currentCharacter); // Call the function to start the journey
-});
-
 // Function to start the journey
 function startJourney(character) {
     const journey = journeys[character]; // Get the journey for the selected character
@@ -820,15 +786,15 @@ function startJourney(character) {
 
 // Function to display the prompt and choices
 function displayPrompt(prompt) {
-    document.getElementById("journey-title").innerText = prompt.text;
+    document.getElementById("journey-title").innerText = prompt.text; // Set the prompt text
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = ""; // Clear previous choices
 
     prompt.choices.forEach(choice => {
         const button = document.createElement("button");
-        button.innerText = choice.text;
-        button.onclick = () => handleChoice(choice.next);
-        choicesDiv.appendChild(button);
+        button.innerText = choice.text; // Set button text
+        button.onclick = () => handleChoice(choice.next); // Set up the choice handler
+        choicesDiv.appendChild(button); // Add button to the choices div
     });
 }
 
@@ -838,3 +804,25 @@ function handleChoice(next) {
     const nextPrompt = currentJourney.prompts.find(p => p.id === next); // Find the next prompt
     displayPrompt(nextPrompt); // Display the next prompt
 }
+
+// Event listeners for character selection buttons
+document.getElementById("anticleaButton").addEventListener("click", function() {
+    currentCharacter = 'anticlea'; // Set the current character
+    startJourney(currentCharacter); // Call the function to start the journey
+});
+document.getElementById("didoButton").addEventListener("click", function() {
+    currentCharacter = 'dido'; // Set the current character
+    startJourney(currentCharacter); // Call the function to start the journey
+});
+document.getElementById("achillesButton").addEventListener("click", function() {
+    currentCharacter = 'achilles'; // Set the current character
+    startJourney(currentCharacter); // Call the function to start the journey
+});
+document.getElementById("anchisesButton").addEventListener("click", function() {
+    currentCharacter = 'anchises'; // Set the current character
+    startJourney(currentCharacter); // Call the function to start the journey
+});
+document.getElementById("sibylButton").addEventListener("click", function() {
+    currentCharacter = 'sibyl'; // Set the current character
+    startJourney(currentCharacter); // Call the function to start the journey
+});
