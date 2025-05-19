@@ -106,3 +106,5 @@ const segments = [
   nextBtn.addEventListener("click", showNextSegment);
   prevBtn.addEventListener("click", showPreviousSegment);
   skipBtn.addEventListener("click", skipAnimation);
+
+  renderSegment();
