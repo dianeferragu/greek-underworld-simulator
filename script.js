@@ -5,7 +5,7 @@ const journeys = {
                 {
                     text: "You stand in Elysium, surrounded by golden fields and the spirits of the blessed. Do you…?",
                     choices: [
-                        { text: "Reveal Rome’s destiny to Aeneas", next: "A" },
+                        { text: "Reveal Rome's destiny to Aeneas", next: "A" },
                         { text: "Call forth other Roman spirits", next: "B" },
                         { text: "Grant Aeneas clarity or mystery", next: "C" },
                         { text: "Reflect on your past life", next: "D" },
@@ -61,7 +61,7 @@ const journeys = {
                 },
                 {
                     id: "B3",
-                    text: "Marcellus’s tragic fate reminds Aeneas of the cost of greatness. **Ending: The Price of Glory**",
+                    text: "Marcellus's tragic fate reminds Aeneas of the cost of greatness. **Ending: The Price of Glory**",
                     choices: []
                 },
                 // Path C: Grant clarity or mystery
@@ -715,7 +715,7 @@ const journeys = {
                 text: "You seek the meaning of your legacy. Do you…?",
                 choices: [
                     { text: "Ask the gods for insight", next: "F1" },
-                    { text: "Reflect on your life’s impact", next: "F2" },
+                    { text: "Reflect on your life's impact", next: "F2" },
                     { text: "Seek counsel from other heroes", next: "F3" }
                 ]
             },
@@ -740,7 +740,7 @@ const journeys = {
                 text: "You choose to embrace the peace of the afterlife. Do you…?",
                 choices: [
                     { text: "Accept your fate with grace", next: "G1" },
-                    { text: "Reflect on your life’s journey", next: "G2" },
+                    { text: "Reflect on your life's journey", next: "G2" },
                     { text: "Guide others to find peace", next: "G3" }
                 ]
             },
@@ -802,16 +802,25 @@ document.getElementById("tiresiasButton").addEventListener("click", function() {
     loadCharacterPrompts("tiresias");
 });
 
+// Assuming you have a global variable to track the current character
+let currentCharacter = '';
+
+document.getElementById("anticleaButton").addEventListener("click", function() {
+    currentCharacter = 'anticlea'; // Set the current character
+    startJourney(currentCharacter); // Call the function to start the journey
+});
+
+// Function to start the journey
 function startJourney(character) {
-    const journey = journeys[character];
-    document.getElementById("character-selection").style.display = "none";
-    document.getElementById("journey").style.display = "block";
-    displayPrompt(journey.prompts[0]);
+    const journey = journeys[character]; // Get the journey for the selected character
+    document.getElementById("character-selection").style.display = "none"; // Hide character selection
+    document.getElementById("journey").style.display = "block"; // Show journey section
+    displayPrompt(journey.prompts[0]); // Display the first prompt of the selected character
 }
 
+// Function to display the prompt and choices
 function displayPrompt(prompt) {
     document.getElementById("journey-title").innerText = prompt.text;
-    document.getElementById("journey-text").innerText = prompt.text;
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = ""; // Clear previous choices
 
@@ -823,7 +832,9 @@ function displayPrompt(prompt) {
     });
 }
 
+// Function to handle the choice made by the user
 function handleChoice(next) {
-    // Logic to handle the next steps based on the choice made
-    // You can implement the branching logic here
+    const currentJourney = journeys[currentCharacter]; // Get the current character's journey
+    const nextPrompt = currentJourney.prompts.find(p => p.id === next); // Find the next prompt
+    displayPrompt(nextPrompt); // Display the next prompt
 }
