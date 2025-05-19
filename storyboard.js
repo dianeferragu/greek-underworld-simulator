@@ -76,11 +76,10 @@ const segments = [
     typeText(segments[index]);
     playAudio(index);
   
-    // Update character bubble
+    // Update to show narrator instead of character dialogue
     characterBox.innerHTML = `
-      <div class="character-dialogue">
-        <img src="${characterImages[index]}" alt="${characterNames[index]}" />
-        <div class="speech-bubble">${characterNames[index]} speaks...</div>
+      <div class="narrator-dialogue">
+        <div class="speech-bubble">Narrator speaks...</div>
       </div>
     `;
   }
