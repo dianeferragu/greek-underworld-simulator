@@ -21,15 +21,12 @@ const segments = [
   ];
   
   const characterImages = [
-    "Photos/aeneas.png",
-    "Photos/odysseus.png",
-    "Photos/dido.png",
-    "Photos/sibyl.png",
-    "Photos/tiresias.png",
-    "Photos/anticlea.png",
-    "Photos/achilles.png",
-    "Photos/anchises.png",
-    "Photos/sibyl.png"
+    "photos/achilles.png",
+    "photos/anchises.png",
+    "photos/anticlea.png",
+    "photos/dido.png",
+    "photos/sibyl.png",
+    "photos/tiresias.png",
   ];
   
   const characterNames = [
