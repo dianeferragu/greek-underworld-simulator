@@ -1,111 +1,88 @@
 body {
     font-family: 'Georgia', serif;
+    background: #111;
+    color: #eee;
+    padding: 30px;
     margin: 0;
-    padding: 0;
-    background-image: url('Photos/underworld.webp'); /* Ensure this path is correct */
-    background-size: cover;
-    padding: 50px;
-    opacity: 0.9;
-    height: 100vh; /* Ensure it covers the full height */
-}
-
-h1, h2 {
-    font-family: 'Times New Roman', serif;
-}
-
-#characterSelection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  }
+  
+  #game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #222;
     padding: 20px;
-    border-radius: 10px;
-}
-
-.character {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    border: 1px solid #fff;
-    border-radius: 10px;
-    width: 200px; /* Adjust as needed */
-    margin: 20px;
-    padding: 10px;
-    text-align: center;
-}
-
-.character img {
-    width: 100%; /* Adjust to fit the container */
-    height: auto;
-    border-radius: 10px; /* Rounded corners for images */
-}
-
-button {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #666;
-}
-
-#characterImage {
-    width: 200px; /* Adjust size as needed */
-    margin-top: 20px;
-}
-
-#game-container {
-    padding: 20px; /* Padding around the game container */
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    border-radius: 10px; /* Rounded corners */
-    max-width: 800px; /* Maximum width of the container */
-    margin: auto; /* Center the container */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
-}
-
-.hidden {
-    display: none; /* Hide elements with this class */
-}
-
-#characters {
-    display: flex; /* Use flexbox for character display */
-    flex-wrap: wrap; /* Allow wrapping of character elements */
-    justify-content: center; /* Center align character elements */
-}
-
-#characters div {
-    margin: 10px; /* Margin around each character */
-    padding: 10px; /* Padding inside character divs */
-    background: rgba(255, 255, 255, 0.1); /* Light background for character divs */
-    border-radius: 10px; /* Rounded corners */
-    width: 200px; /* Fixed width for character divs */
-    text-align: center; /* Center text in character divs */
-}
-
-#characters img {
-    width: 100%; /* Make images responsive */
-    border-radius: 5px; /* Rounded corners for images */
-}
-
-#story-text {
-    margin: 20px 0; /* Margin for story text */
-    font-size: 18px; /* Font size for story text */
-}
-
-#choices {
-    margin-top: 20px; /* Margin above choices */
-}
-
-.character-selection {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
-    padding: 20px; /* Add some padding */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center; /* Center the text */
-}
-
-h1 {
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  #character-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
     margin-bottom: 20px;
-}
+  }
+  
+  .character-dialogue {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .character-dialogue img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .speech-bubble {
+    background: #fff;
+    color: #000;
+    padding: 12px 18px;
+    border-radius: 14px;
+    max-width: 420px;
+    position: relative;
+    font-style: italic;
+  }
+  
+  .speech-bubble::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: white;
+  }
+  
+  #story-text {
+    white-space: pre-line;
+    min-height: 160px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background: #444;
+  }
+  

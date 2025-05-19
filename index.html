@@ -1,30 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greco-Roman Underworld Adventure</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Underworld Storyboard</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="background">
-        <h1>Journey Through the Underworld: A Greco-Roman Adventure</h1>
-        <h2>Based on Homer's Odyssey and Virgil's Aeneid</h2>
-        <div id="character-selection">
-            <button id="anticleaButton">Select Anticlea <img id="anticleaImage" src="Photos/anticlea.png" alt="Ancticlea Image" style="display:none;"> </button>
-            <button id="didoButton">Select Dido <img id="didoImage" src="Photos/dido.png" alt="Dido Image" style="display:none;"> </button>
-            <button id="achillesButton">Select Achilles <img id="achillesImage" src="Photos/achilles.png" alt="Achilles Image" style="display:none;"> </button>
-            <button id="anchisesButton">Select Anchises <img id="anchisesImage" src="Photos/anchises.png" alt="Anchises Image" style="display:none;"> </button>
-            <button id="sibylButton">Select Sibyl <img id="sibylImage" src="Photos/sibyl.png" alt="Sibyl Image" style="display:none;"> </button>
-        </div>
-        <img id="underworldImage" src="Photos/underworld.webp" alt="Underworld Image" style="display:none;">
+  <div id="game-container">
+    <div id="character-box"></div>
+    <div id="story-text"></div>
+    <div class="controls">
+      <button id="prev-btn">⬅ Back</button>
+      <button id="skip-btn">⏩ Skip</button>
+      <button id="next-btn">Next ➡</button>
+    </div>
+  </div>
 
-    </div>
-    <div id="journey" style="display: none;">
-        <h2 id="journey-title"></h2>
-        <p id="journey-text"></p>
-        <div id="choices"></div>
-    </div>
-    <script src="script.js"></script>
+  <script src="storyboard.js"></script>
 </body>
 </html>
