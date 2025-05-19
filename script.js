@@ -1,580 +1,766 @@
-const adventures = {
+const journeys = {
+        anchises: {
+            title: "Anchises' Journey",
+            prompts: [
+                {
+                    text: "You stand in Elysium, surrounded by golden fields and the spirits of the blessed. Do you…?",
+                    choices: [
+                        { text: "Reveal Rome’s destiny to Aeneas", next: "A" },
+                        { text: "Call forth other Roman spirits", next: "B" },
+                        { text: "Grant Aeneas clarity or mystery", next: "C" },
+                        { text: "Reflect on your past life", next: "D" },
+                        { text: "Seek guidance from the gods", next: "E" },
+                        { text: "Prepare Aeneas for his journey ahead", next: "F" },
+                        { text: "Contemplate the fate of your descendants", next: "G" }
+                    ]
+                },
+                // Path A: Reveal Rome's destiny
+                {
+                    id: "A",
+                    text: "You decide to share the future of Rome with Aeneas. Do you…?",
+                    choices: [
+                        { text: "Speak of glory and triumph", next: "A1" },
+                        { text: "Warn him of the challenges ahead", next: "A2" },
+                        { text: "Encourage him to embrace his fate", next: "A3" }
+                    ]
+                },
+                {
+                    id: "A1",
+                    text: "Aeneas is filled with pride and determination. **Ending: The Glorious Path**",
+                    choices: []
+                },
+                {
+                    id: "A2",
+                    text: "He listens intently, understanding the weight of his journey. **Ending: The Burden of Destiny**",
+                    choices: []
+                },
+                {
+                    id: "A3",
+                    text: "Aeneas feels empowered to face his fate. **Ending: Embracing Destiny**",
+                    choices: []
+                },
+                // Path B: Call forth Roman spirits
+                {
+                    id: "B",
+                    text: "You summon the spirits of great Romans. Do you…?",
+                    choices: [
+                        { text: "Show Caesar Augustus", next: "B1" },
+                        { text: "Show Romulus", next: "B2" },
+                        { text: "Show Marcellus", next: "B3" }
+                    ]
+                },
+                {
+                    id: "B1",
+                    text: "Augustus inspires Aeneas with visions of glory. **Ending: The Legacy of Rome**",
+                    choices: []
+                },
+                {
+                    id: "B2",
+                    text: "Romulus speaks of the founding of the city. **Ending: The Birth of a Nation**",
+                    choices: []
+                },
+                {
+                    id: "B3",
+                    text: "Marcellus’s tragic fate reminds Aeneas of the cost of greatness. **Ending: The Price of Glory**",
+                    choices: []
+                },
+                // Path C: Grant clarity or mystery
+                {
+                    id: "C",
+                    text: "Do you grant Aeneas clarity or mystery? Choose wisely.",
+                    choices: [
+                        { text: "Grant him clarity", next: "C1" },
+                        { text: "Grant him mystery", next: "C2" }
+                    ]
+                },
+                {
+                    id: "C1",
+                    text: "Aeneas gains insight into his path. **Ending: The Clear Vision**",
+                    choices: []
+                },
+                {
+                    id: "C2",
+                    text: "He is led astray by illusions. **Ending: The Path of Shadows**",
+                    choices: []
+                },
+                // Path D: Reflect on your past life
+                {
+                    id: "D",
+                    text: "You ponder your life on Earth. Do you…?",
+                    choices: [
+                        { text: "Regret your choices", next: "D1" },
+                        { text: "Celebrate your legacy", next: "D2" },
+                        { text: "Seek forgiveness for your mistakes", next: "D3" }
+                    ]
+                },
+                {
+                    id: "D1",
+                    text: "Your regrets weigh heavily on you. **Ending: The Burden of Regret**",
+                    choices: []
+                },
+                {
+                    id: "D2",
+                    text: "You find peace in your accomplishments. **Ending: The Joy of Legacy**",
+                    choices: []
+                },
+                {
+                    id: "D3",
+                    text: "You are granted forgiveness by the gods. **Ending: Redemption**",
+                    choices: []
+                },
+                // Path E: Seek guidance from the gods
+                {
+                    id: "E",
+                    text: "You call upon the gods for wisdom. Do you…?",
+                    choices: [
+                        { text: "Ask for guidance on Aeneas's journey", next: "E1" },
+                        { text: "Request a sign of approval", next: "E2" },
+                        { text: "Inquire about your own fate", next: "E3" }
+                    ]
+                },
+                {
+                    id: "E1",
+                    text: "The gods provide clarity for Aeneas. **Ending: Divine Guidance**",
+                    choices: []
+                },
+                {
+                    id: "E2",
+                    text: "You receive a sign, but it is cryptic. **Ending: The Ambiguous Sign**",
+                    choices: []
+                },
+                {
+                    id: "E3",
+                    text: "You learn of your eternal rest. **Ending: The Peace of the Afterlife**",
+                    choices: []
+                },
+                // Path F: Prepare Aeneas for his journey
+                {
+                    id: "F",
+                    text: "You decide to prepare Aeneas. Do you…?",
+                    choices: [
+                        { text: "Teach him the ways of leadership", next: "F1" },
+                        { text: "Share the stories of his ancestors", next: "F2" },
+                        { text: "Equip him with knowledge of the Underworld", next: "F3" }
+                    ]
+                },
+                {
+                    id: "F1",
+                    text: "Aeneas becomes a wise leader. **Ending: The Leader of Men**",
+                    choices: []
+                },
+                {
+                    id: "F2",
+                    text: "He feels connected to his heritage. **Ending: The Legacy of Ancestors**",
+                    choices: []
+                },
+                {
+                    id: "F3",
+                    text: "He navigates the Underworld with ease. **Ending: The Knowledgeable Hero**",
+                    choices: []
+                },
+                // Path G: Contemplate the fate of your descendants
+                {
+                    id: "G",
+                    text: "You think of your descendants. Do you…?",
+                    choices: [
+                        { text: "Hope for their greatness", next: "G1" },
+                        { text: "Fear for their future", next: "G2" },
+                        { text: "Pray for their protection", next: "G3" }
+                    ]
+                },
+                {
+                    id: "G1",
+                    text: "You see a bright future for them. **Ending: The Hopeful Ancestor**",
+                    choices: []
+                },
+                {
+                    id: "G2",
+                    text: "You worry about the challenges they will face. **Ending: The Anxious Guardian**",
+                    choices: []
+                },
+                {
+                    id: "G3",
+                    text: "Your prayers are answered. **Ending: The Blessed Lineage**",
+                    choices: []
+                }
+            ]
+        },
     dido: {
-        openingPrompt: "You sit beneath the myrtle trees in the Underworld. Aeneas has just passed you by, silent. Your grief flares like embers. Do you…",
-        choices: {
-            A: {
-                prompt: "Curse Aeneas aloud, summoning the Furies.",
-                next: {
-                    A1: {
-                        prompt: "The Furies answer. Do you…",
-                        choices: {
-                            A1a: "Demand vengeance for your death.",
-                            A1b: "Ask them to curse his future line.",
-                            A1c: "Bargain your soul for revenge."
-                        }
-                    }
-                }
+        title: "Dido's Journey",
+        prompts: [
+            {
+                text: "You sit beneath the myrtle trees in the Underworld. Aeneas has just passed you by, silent. Do you…?",
+                choices: [
+                    { text: "Curse Aeneas aloud, summoning the Furies", next: "A" },
+                    { text: "Turn away and head toward the River Lethe", next: "B" },
+                    { text: "Follow the path toward Sychaeus's soul", next: "C" },
+                    { text: "Seek out Helen among the dead", next: "D" },
+                    { text: "Approach the shade of Phaedra and other betrayed women", next: "E" },
+                    { text: "Cry out to the gods for justice", next: "F" },
+                    { text: "Offer yourself as a guardian to other women lost to love", next: "G" }
+                ]
             },
-            B: {
-                prompt: "Turn away and head toward the River Lethe.",
-                next: {
-                    B1: {
-                        prompt: "The waters shimmer. Do you…",
-                        choices: {
-                            B1a: "Drink deeply to forget him.",
-                            B1b: "Dip a hand and remember only Sychaeus.",
-                            B1c: "Refuse the water and meditate on your pain."
-                        }
-                    }
-                }
+            // Path A: Curse Aeneas
+            {
+                id: "A",
+                text: "The Furies answer your call. Do you…?",
+                choices: [
+                    { text: "Demand vengeance for your death", next: "A1a" },
+                    { text: "Ask them to curse his future line", next: "A1b" },
+                    { text: "Bargain your soul for revenge", next: "A1c" }
+                ]
             },
-            C: {
-                prompt: "Follow the path toward Sychaeus's soul.",
-                next: {
-                    C1: {
-                        prompt: "You find him waiting. Do you…",
-                        choices: {
-                            C1a: "Fall into his arms.",
-                            C1b: "Confess your betrayal by loving Aeneas.",
-                            C1c: "Ask for forgiveness."
-                        }
-                    }
-                }
+            {
+                id: "A1a",
+                text: "You become a whisper in Lavinia's nightmares. **Ending: Haunting the Bride**",
+                choices: []
             },
-            D: {
-                prompt: "Seek out Helen among the dead.",
-                next: {
-                    D1: {
-                        prompt: "You find her near the gates of Tartarus. Do you…",
-                        choices: {
-                            D1a: "Accuse her of your downfall.",
-                            D1b: "Listen to her regrets.",
-                            D1c: "Challenge her to speak the truth."
-                        }
-                    }
-                }
+            {
+                id: "A1b",
+                text: "The Furies foretell civil war in Rome. **Ending: Bloodline Cursed**",
+                choices: []
             },
-            E: {
-                prompt: "Approach Phaedra and the betrayed.",
-                next: {
-                    E1: {
-                        prompt: "The grove of grieving women welcomes you. Do you…",
-                        choices: {
-                            E1a: "Sit beside them and tell your tale.",
-                            E1b: "Call them to rise in rebellion.",
-                            E1c: "Walk among them silently."
-                        }
-                    }
-                }
+            {
+                id: "A1c",
+                text: "They make you their servant. **Ending: Fury's Apprentice**",
+                choices: []
             },
-            F: {
-                prompt: "Cry out to the gods for justice.",
-                next: {
-                    F1: {
-                        prompt: "Persephone answers your cry. Do you…",
-                        choices: {
-                            F1a: "Ask to be judge of men's hearts.",
-                            F1b: "Beg for your own peace.",
-                            F1c: "Request that Carthage rise again."
-                        }
-                    }
-                }
+            // Path B: Turn away to Lethe
+            {
+                id: "B",
+                text: "The waters shimmer. Do you…?",
+                choices: [
+                    { text: "Drink deeply to forget him", next: "B1a" },
+                    { text: "Dip a hand and remember only Sychaeus", next: "B1b" },
+                    { text: "Refuse the water and meditate on your pain", next: "B1c" }
+                ]
             },
-            G: {
-                prompt: "Offer yourself as a guardian to other women lost to love.",
-                next: {
-                    G1: {
-                        prompt: "A shade of a young girl approaches, weeping. Do you…",
-                        choices: {
-                            G1a: "Embrace her and tell your story.",
-                            G1b: "Lead her away from Aeneas's path.",
-                            G1c: "Swear to protect her forever."
-                        }
-                    }
-                }
+            {
+                id: "B1a",
+                text: "You lose all memory — even your own name. **Ending: Oblivion's Peace**",
+                choices: []
+            },
+            {
+                id: "B1b",
+                text: "Sychaeus speaks your name again. **Ending: Reunion in Memory**",
+                choices: []
+            },
+            {
+                id: "B1c",
+                text: "Your pain forms into poetry sung by nearby shades. **Ending: Queen of Sorrows**",
+                choices: []
+            },
+            // Path C: Follow Sychaeus
+            {
+                id: "C",
+                text: "You find him waiting. Do you…?",
+                choices: [
+                    { text: "Fall into his arms", next: "C1a" },
+                    { text: "Confess your betrayal by loving Aeneas", next: "C1b" },
+                    { text: "Ask for forgiveness", next: "C1c" }
+                ]
+            },
+            {
+                id: "C1a",
+                text: "He welcomes you back with no words. **Ending: Silent Embrace**",
+                choices: []
+            },
+            {
+                id: "C1b",
+                text: "He weeps and forgives you. **Ending: Honest Reunion**",
+                choices: []
+            },
+            {
+                id: "C1c",
+                text: "You are granted a second death — rebirth above. **Ending: Lethean Rebirth**",
+                choices: []
+            },
+            // Path D: Seek out Helen
+            {
+                id: "D",
+                text: "You confront Helen. Do you…?",
+                choices: [
+                    { text: "Demand an explanation for her role in your suffering", next: "D1a" },
+                    { text: "Challenge her to a duel", next: "D1b" },
+                    { text: "Forgive her and seek peace", next: "D1c" }
+                ]
+            },
+            {
+                id: "D1a",
+                text: "Helen reveals her own pain. **Ending: Shared Suffering**",
+                choices: []
+            },
+            {
+                id: "D1b",
+                text: "You fight, but both are lost in the shadows. **Ending: Eternal Conflict**",
+                choices: []
+            },
+            {
+                id: "D1c",
+                text: "You find solace in forgiveness. **Ending: Peaceful Resolution**",
+                choices: []
+            },
+            // Path E: Approach Phaedra
+            {
+                id: "E",
+                text: "You find Phaedra weeping. Do you…?",
+                choices: [
+                    { text: "Comfort her", next: "E1a" },
+                    { text: "Share your own story of betrayal", next: "E1b" },
+                    { text: "Encourage her to seek revenge", next: "E1c" }
+                ]
+            },
+            {
+                id: "E1a",
+                text: "You bond over shared grief. **Ending: Sisterhood in Sorrow**",
+                choices: []
+            },
+            {
+                id: "E1b",
+                text: "Your story inspires her to find strength. **Ending: Empowered Spirits**",
+                choices: []
+            },
+            {
+                id: "E1c",
+                text: "You both plot revenge, but it leads to despair. **Ending: Vengeful Shadows**",
+                choices: []
+            },
+            // Path F: Cry out for justice
+            {
+                id: "F",
+                text: "Your voice echoes through the Underworld. Do you…?",
+                choices: [
+                    { text: "Call upon the gods for vengeance", next: "F1a" },
+                    { text: "Seek guidance from the dead", next: "F1b" },
+                    { text: "Accept your fate and find peace", next: "F1c" }
+                ]
+            },
+            {
+                id: "F1a",
+                text: "The gods ignore your pleas. **Ending: Forgotten Fury**",
+                choices: []
+            },
+            {
+                id: "F1b",
+                text: "You gain wisdom from the lost souls. **Ending: Knowledge of the Damned**",
+                choices: []
+            },
+            {
+                id: "F1c",
+                text: "You find solace in acceptance. **Ending: Peaceful Resignation**",
+                choices: []
+            },
+            // Path G: Guardian of Lost Women
+            {
+                id: "G",
+                text: "You take on the role of a guardian. Do you…?",
+                choices: [
+                    { text: "Guide them to safety", next: "G1a" },
+                    { text: "Share your story to warn them", next: "G1b" },
+                    { text: "Lead them in rebellion against fate", next: "G1c" }
+                ]
+            },
+            {
+                id: "G1a",
+                text: "You become a beacon of hope. **Ending: Guardian of the Lost**",
+                choices: []
+            },
+            {
+                id: "G1b",
+                text: "Your story inspires them to seek their own paths. **Ending: Legacy of Strength**",
+                choices: []
+            },
+            {
+                id: "G1c",
+                text: "You lead a rebellion, but it ends in tragedy. **Ending: Fallen Guardian**",
+                choices: []
             }
-        }
-    },
-    anchises: {
-        openingPrompt: "From your place in Elysium, you watch the souls of the unborn stir near the River Lethe. Rome waits. Aeneas approaches. Do you…",
-        choices: {
-            A: {
-                prompt: "Summon Aeneas to your side.",
-                next: {
-                    A1: {
-                        prompt: "He approaches, unsure. Do you…",
-                        choices: {
-                            A1a: "Show him the glories of future Rome.",
-                            A1b: "Tell him of the wars he must fight.",
-                            A1c: "Embrace him and say nothing."
-                        }
-                    }
-                }
-            },
-            B: {
-                prompt: "Wait in silence and watch.",
-                next: {
-                    B1: {
-                        prompt: "Aeneas seeks you, but you delay. Do you…",
-                        choices: {
-                            B1a: "Reveal yourself only at the last moment.",
-                            B1b: "Watch him pass you by.",
-                            B1c: "Send a vision instead."
-                        }
-                    }
-                }
-            },
-            C: {
-                prompt: "Call out to the spirit of Augustus.",
-                next: {
-                    C1: {
-                        prompt: "The soul of Rome's future emperor stirs. Do you…",
-                        choices: {
-                            C1a: "Bless him with wisdom.",
-                            C1b: "Warn him of pride.",
-                            C1c: "Reveal the cost of empire."
-                        }
-                    }
-                }
-            },
-            D: {
-                prompt: "Visit the shades of Priam and Hector.",
-                next: {
-                    D1: {
-                        prompt: "They await in noble sorrow. Do you…",
-                        choices: {
-                            D1a: "Speak of Troy's fall again.",
-                            D1b: "Tell them of Aeneas's journey.",
-                            D1c: "Ask if it was all worth it."
-                        }
-                    }
-                }
-            },
-            E: {
-                prompt: "Walk among the unborn souls.",
-                next: {
-                    E1: {
-                        prompt: "So many heroes wait. Do you…",
-                        choices: {
-                            E1a: "Speak with Romulus.",
-                            E1b: "Comfort a crying soul not yet named.",
-                            E1c: "Ask them what they remember of the world above."
-                        }
-                    }
-                }
-            },
-            F: {
-                prompt: "Gaze upon Dido's ghost.",
-                next: {
-                    F1: {
-                        prompt: "She burns still with silence. Do you…",
-                        choices: {
-                            F1a: "Apologize for your son's betrayal.",
-                            F1b: "Justify Aeneas's mission.",
-                            F1c: "Offer her remembrance in Roman rites."
-                        }
-                    }
-                }
-            },
-            G: {
-                prompt: "Pluck the Golden Bough once more.",
-                next: {
-                    G1: {
-                        prompt: "It glows again in your hand. Do you…",
-                        choices: {
-                            G1a: "Offer it to another soul.",
-                            G1b: "Use it to cross the gates again.",
-                            G1c: "Bury it in the soil of memory."
-                        }
-                    }
-                }
-            }
-        }
+        ]
     },
     sibyl: {
-        openingPrompt: "You stand once more at the gates of Dis, the hundred mouths of your cave silent behind you. Your service to Apollo weighs heavily. Aeneas lingers at the threshold. Do you…",
-        choices: {
-            A: {
-                prompt: "Push Aeneas forward without warning.",
-                next: {
-                    A1: {
-                        prompt: "He stumbles, frightened. Do you…",
-                        choices: {
-                            A1a: "Leave him to face the spirits alone.",
-                            A1b: "Guide him silently from behind.",
-                            A1c: "Sing the old chants to give him courage."
-                        }
-                    }
-                }
+        title: "The Sibyl's Journey",
+        prompts: [
+            {
+                text: "You stand at the entrance of the Underworld, the dark waters of Avernus before you. Do you…?",
+                choices: [
+                    { text: "Guide Aeneas through the gates", next: "A" },
+                    { text: "Consult the spirits for wisdom", next: "B" },
+                    { text: "Seek the truth about your own fate", next: "C" },
+                    { text: "Prepare offerings for the gods", next: "D" },
+                    { text: "Reflect on the souls you have guided", next: "E" },
+                    { text: "Call upon Apollo for insight", next: "F" },
+                    { text: "Challenge the Furies to reveal their secrets", next: "G" }
+                ]
             },
-            B: {
-                prompt: "Let him choose whether to enter.",
-                next: {
-                    B1: {
-                        prompt: "He hesitates. Do you…",
-                        choices: {
-                            B1a: "Wait without speaking.",
-                            B1b: "Give him a riddle to solve.",
-                            B1c: "Walk away until he follows."
-                        }
-                    }
-                }
+            // Path A: Guide Aeneas
+            {
+                id: "A",
+                text: "You decide to guide Aeneas. Do you…?",
+                choices: [
+                    { text: "Lead him to the Fields of Elysium", next: "A1" },
+                    { text: "Show him the horrors of Tartarus", next: "A2" },
+                    { text: "Reveal the path to the River Lethe", next: "A3" }
+                ]
             },
-            C: {
-                prompt: "Whisper a secret prophecy to him alone.",
-                next: {
-                    C1: {
-                        prompt: "Your voice is soft as leaves. Do you…",
-                        choices: {
-                            C1a: "Tell him of Lavinia's future.",
-                            C1b: "Speak of Dido's soul.",
-                            C1c: "Foretell the death of Turnus."
-                        }
-                    }
-                }
+            {
+                id: "A1",
+                text: "Aeneas finds peace among the blessed. **Ending: The Elysian Reward**",
+                choices: []
             },
-            D: {
-                prompt: "Challenge Apollo's hold on your body.",
-                next: {
-                    D1: {
-                        prompt: "The god tightens his grip. Do you…",
-                        choices: {
-                            D1a: "Beg for freedom.",
-                            D1b: "Curse his name aloud.",
-                            D1c: "Offer him a bargain."
-                        }
-                    }
-                }
+            {
+                id: "A2",
+                text: "He witnesses the punishment of the damned. **Ending: The Weight of Knowledge**",
+                choices: []
             },
-            E: {
-                prompt: "Speak with the dead before you guide the living.",
-                next: {
-                    E1: {
-                        prompt: "You walk among the shades. Do you…",
-                        choices: {
-                            E1a: "Seek Tiresias.",
-                            E1b: "Call on the spirit of Deiphobe.",
-                            E1c: "Speak to the silent crowd."
-                        }
-                    }
-                }
+            {
+                id: "A3",
+                text: "He learns the importance of memory and forgetfulness. **Ending: The Balance of Life**",
+                choices: []
             },
-            F: {
-                prompt: "Hide your scrolls of fate deep in the rock.",
-                next: {
-                    F1: {
-                        prompt: "You dig into the obsidian wall. Do you…",
-                        choices: {
-                            F1a: "Bury the prophecies you hate.",
-                            F1b: "Hide your visions of Rome's end.",
-                            F1c: "Seal the names of unborn heroes."
-                        }
-                    }
-                }
+            // Path B: Consult the spirits
+            {
+                id: "B",
+                text: "You consult the spirits for guidance. Do you…?",
+                choices: [
+                    { text: "Ask about Aeneas's destiny", next: "B1" },
+                    { text: "Seek knowledge of the future", next: "B2" },
+                    { text: "Inquire about your own fate", next: "B3" }
+                ]
             },
-            G: {
-                prompt: "Offer a prophecy to someone else, not Aeneas.",
-                next: {
-                    G1: {
-                        prompt: "A Roman soul waits by the Lethe. Do you…",
-                        choices: {
-                            G1a: "Speak to Caesar.",
-                            G1b: "Speak to Camilla's unborn shade.",
-                            G1c: "Speak to the weeping mother of a future general."
-                        }
-                    }
-                }
+            {
+                id: "B1",
+                text: "The spirits reveal a glorious future for Aeneas. **Ending: The Prophetic Vision**",
+                choices: []
+            },
+            {
+                id: "B2",
+                text: "You glimpse the trials that await. **Ending: The Burden of Sight**",
+                choices: []
+            },
+            {
+                id: "B3",
+                text: "You learn of your eternal role as a guide. **Ending: The Eternal Guide**",
+                choices: []
+            },
+            // Path C: Seek the truth about your fate
+            {
+                id: "C",
+                text: "You ponder your own fate. Do you…?",
+                choices: [
+                    { text: "Accept your role as a guide", next: "C1" },
+                    { text: "Desire to escape your fate", next: "C2" },
+                    { text: "Seek redemption for past mistakes", next: "C3" }
+                ]
+            },
+            {
+                id: "C1",
+                text: "You find peace in your purpose. **Ending: Embracing Destiny**",
+                choices: []
+            },
+            {
+                id: "C2",
+                text: "You attempt to flee, but the Underworld binds you. **Ending: The Trapped Seer**",
+                choices: []
+            },
+            {
+                id: "C3",
+                text: "You are granted a chance for redemption. **Ending: The Redeemed Spirit**",
+                choices: []
+            },
+            // Path D: Prepare offerings for the gods
+            {
+                id: "D",
+                text: "You prepare offerings. Do you…?",
+                choices: [
+                    { text: "Offer fruits and flowers", next: "D1" },
+                    { text: "Sacrifice a lamb", next: "D2" },
+                    { text: "Burn incense and pray", next: "D3" }
+                ]
+            },
+            {
+                id: "D1",
+                text: "The gods are pleased with your offerings. **Ending: The Favor of the Gods**",
+                choices: []
+            },
+            {
+                id: "D2",
+                text: "The sacrifice is accepted, but at a cost. **Ending: The Price of Sacrifice**",
+                choices: []
+            },
+            {
+                id: "D3",
+                text: "Your prayers are heard, granting you insight. **Ending: The Enlightened Seer**",
+                choices: []
+            },
+            // Path E: Reflect on the souls you have guided
+            {
+                id: "E",
+                text: "You think of the souls you have guided. Do you…?",
+                choices: [
+                    { text: "Recall their stories", next: "E1" },
+                    { text: "Wish to reunite with them", next: "E2" },
+                    { text: "Seek to help more souls", next: "E3" }
+                ]
+            },
+            {
+                id: "E1",
+                text: "Their stories inspire you. **Ending: The Legacy of Guidance**",
+                choices: []
+            },
+            {
+                id: "E2",
+                text: "You long for their company. **Ending: The Lonely Guide**",
+                choices: []
+            },
+            {
+                id: "E3",
+                text: "You find purpose in helping others. **Ending: The Compassionate Seer**",
+                choices: []
+            },
+            // Path F: Call upon Apollo
+            {
+                id: "F",
+                text: "You call upon Apollo for insight. Do you…?",
+                choices: [
+                    { text: "Ask for wisdom in guiding Aeneas", next: "F1" },
+                    { text: "Request a vision of the future", next: "F2" },
+                    { text: "Seek clarity about your own fate", next: "F3" }
+                ]
+            },
+            {
+                id: "F1",
+                text: "Apollo grants you wisdom. **Ending: The Wise Guide**",
+                choices: []
+            },
+            {
+                id: "F2",
+                text: "You receive a cryptic vision. **Ending: The Ambiguous Prophecy**",
+                choices: []
+            },
+            {
+                id: "F3",
+                text: "You learn of your eternal role. **Ending: The Eternal Oracle**",
+                choices: []
+            },
+            // Path G: Challenge the Furies
+            {
+                id: "G",
+                text: "You challenge the Furies. Do you…?",
+                choices: [
+                    { text: "Demand their secrets", next: "G1" },
+                    { text: "Bargain for knowledge", next: "G2" },
+                    { text: "Defy them outright", next: "G3" }
+                ]
+            },
+            {
+                id: "G1",
+                text: "They reveal dark truths. **Ending: The Burden of Knowledge**",
+                choices: []
+            },
+            {
+                id: "G2",
+                text: "You gain insight, but at a cost. **Ending: The Price of Truth**",
+                choices: []
+            },
+            {
+                id: "G3",
+                text: "You are punished for your defiance. **Ending: The Wrath of the Furies**",
+                choices: []
             }
-        }
-    },
-    tiresias: {
-        openingPrompt: "You dwell at the edge of Hades, where blood calls prophecy and gods call pain. A mortal approaches once more — Odysseus, seeking truth. Around you swirl futures. Do you…",
-        choices: {
-            A: {
-                prompt: "Greet Odysseus with riddles.",
-                next: {
-                    A1: {
-                        prompt: "He furrows his brow. Do you…",
-                        choices: {
-                            A1a: "Lead him on a journey of guessing.",
-                            A1b: "Hide the truth to test his wit.",
-                            A1c: "Speak in metaphors about Ithaca."
-                        }
-                    }
-                }
-            },
-            B: {
-                prompt: "Tell him plainly what he must do.",
-                next: {
-                    B1: {
-                        prompt: "You speak the whole truth. Do you…",
-                        choices: {
-                            B1a: "Emphasize the suitors' deaths.",
-                            B1b: "Warn of Poseidon's wrath.",
-                            B1c: "Tell of his lonely journey ahead."
-                        }
-                    }
-                }
-            },
-            C: {
-                prompt: "Refuse to speak to him.",
-                next: {
-                    C1: {
-                        prompt: "Odysseus offers blood. Do you…",
-                        choices: {
-                            C1a: "Remain silent still.",
-                            C1b: "Accept only after a deeper sacrifice.",
-                            C1c: "Leave the ritual circle."
-                        }
-                    }
-                }
-            },
-            D: {
-                prompt: "Seek the will of Hades before you answer.",
-                next: {
-                    D1: {
-                        prompt: "You kneel in the dark. Do you…",
-                        choices: {
-                            D1a: "Listen for Persephone's voice.",
-                            D1b: "Call upon Hades himself.",
-                            D1c: "Wait for an omen in silence."
-                        }
-                    }
-                }
-            },
-            E: {
-                prompt: "Whisper truths only to the dead.",
-                next: {
-                    E1: {
-                        prompt: "You gather forgotten souls. Do you…",
-                        choices: {
-                            E1a: "Tell Achilles about Neoptolemus.",
-                            E1b: "Warn Agamemnon of his death.",
-                            E1c: "Speak to Ajax at last."
-                        }
-                    }
-                }
-            },
-            F: {
-                prompt: "Recall your own cursed transformation.",
-                next: {
-                    F1: {
-                        prompt: "You relive your days as both man and woman. Do you…",
-                        choices: {
-                            F1a: "Pity the past.",
-                            F1b: "Embrace both halves of your life.",
-                            F1c: "Curse the gods for meddling."
-                        }
-                    }
-                }
-            },
-            G: {
-                prompt: "Offer your sight to another.",
-                next: {
-                    G1: {
-                        prompt: "A lost soul pleads for vision. Do you…",
-                        choices: {
-                            G1a: "Give them your prophetic power.",
-                            G1b: "Teach them one vision only.",
-                            G1c: "Lie to protect them from pain."
-                        }
-                    }
-                }
-            }
-        }
+        ]
     },
     achilles: {
-        openingPrompt: "You roam the fields of Asphodel, far from the rage of war. Odysseus approaches to speak of your son, your legacy, and your sorrow. A thousand memories stir. Do you…",
-        choices: {
-            A: {
-                prompt: "Ask about Neoptolemus.",
-                next: {
-                    A1: {
-                        prompt: "Odysseus praises his strength. Do you…",
-                        choices: {
-                            A1a: "Weep for your son's bloodlust.",
-                            A1b: "Boast of his victories.",
-                            A1c: "Wish you had raised him yourself."
-                        }
-                    }
-                }
+        title: "Achilles' Journey",
+        prompts: [
+            {
+                text: "You find yourself in the Fields of Asphodel, surrounded by shades of the fallen. Do you…?",
+                choices: [
+                    { text: "Seek out Patroclus's spirit", next: "A" },
+                    { text: "Confront the ghosts of your enemies", next: "B" },
+                    { text: "Reflect on your glory and choices", next: "C" },
+                    { text: "Challenge the Fates for a second chance", next: "D" },
+                    { text: "Guide the souls of the fallen warriors", next: "E" },
+                    { text: "Search for the meaning of your legacy", next: "F" },
+                    { text: "Embrace the peace of the afterlife", next: "G" }
+                ]
             },
-            B: {
-                prompt: "Seek the shade of Patroclus.",
-                next: {
-                    B1: {
-                        prompt: "He flickers near the tall reeds. Do you…",
-                        choices: {
-                            B1a: "Embrace him at last.",
-                            B1b: "Ask for forgiveness for leaving him alone.",
-                            B1c: "Stay silent beside him."
-                        }
-                    }
-                }
+            // Path A: Seek out Patroclus
+            {
+                id: "A",
+                text: "You call for Patroclus. Do you…?",
+                choices: [
+                    { text: "Ask him about his time in the Underworld", next: "A1" },
+                    { text: "Express your regret for his death", next: "A2" },
+                    { text: "Seek his guidance for your own fate", next: "A3" }
+                ]
             },
-            C: {
-                prompt: "Call for Hector to speak.",
-                next: {
-                    C1: {
-                        prompt: "His shade rises, still marked by war. Do you…",
-                        choices: {
-                            C1a: "Challenge him again.",
-                            C1b: "Apologize for your rage.",
-                            C1c: "Ask him what he saw in death."
-                        }
-                    }
-                }
+            {
+                id: "A1",
+                text: "Patroclus shares his wisdom. **Ending: The Bond of Friendship**",
+                choices: []
             },
-            D: {
-                prompt: "Wander toward the River Lethe.",
-                next: {
-                    D1: {
-                        prompt: "The waters shine with soft oblivion. Do you…",
-                        choices: {
-                            D1a: "Drink deeply.",
-                            D1b: "Gaze without touching.",
-                            D1c: "Cast your shield into the river."
-                        }
-                    }
-                }
+            {
+                id: "A2",
+                text: "He forgives you, and you find peace. **Ending: The Healing of Grief**",
+                choices: []
             },
-            E: {
-                prompt: "Challenge Roman heroes who claim your glory.",
-                next: {
-                    E1: {
-                        prompt: "Aeneas steps forth. Do you…",
-                        choices: {
-                            E1a: "Demand he prove himself.",
-                            E1b: "Test him in combat.",
-                            E1c: "Ask about his sorrow."
-                        }
-                    }
-                }
+            {
+                id: "A3",
+                text: "His advice leads you to clarity. **Ending: The Wise Warrior**",
+                choices: []
             },
-            F: {
-                prompt: "Cry to the gods for another life.",
-                next: {
-                    F1: {
-                        prompt: "Your voice reaches Olympus. Do you…",
-                        choices: {
-                            F1a: "Beg to be a shepherd, not a warrior.",
-                            F1b: "Ask for the life of a poet.",
-                            F1c: "Swear you would rather be no one."
-                        }
-                    }
-                }
+            // Path B: Confront the ghosts
+            {
+                id: "B",
+                text: "You face the spirits of your enemies. Do you…?",
+                choices: [
+                    { text: "Demand an explanation for their actions", next: "B1" },
+                    { text: "Challenge them to a duel", next: "B2" },
+                    { text: "Seek to understand their perspectives", next: "B3" }
+                ]
             },
-            G: {
-                prompt: "Sit beneath the poplar tree and wait for silence.",
-                next: {
-                    G1: {
-                        prompt: "Time passes slowly. Do you…",
-                        choices: {
-                            G1a: "Watch other shades move past.",
-                            G1b: "Carve memories into the tree's bark.",
-                            G1c: "Let your spear turn to dust."
-                        }
-                    }
-                }
+            {
+                id: "B1",
+                text: "They reveal their regrets. **Ending: The Weight of War**",
+                choices: []
+            },
+            {
+                id: "B2",
+                text: "You engage in a futile battle. **Ending: The Cycle of Violence**",
+                choices: []
+            },
+            {
+                id: "B3",
+                text: "You find common ground. **Ending: The Shared Suffering**",
+                choices: []
+            },
+            // Path C: Reflect on glory
+            {
+                id: "C",
+                text: "You ponder your past glories. Do you…?",
+                choices: [
+                    { text: "Celebrate your victories", next: "C1" },
+                    { text: "Regret your choices", next: "C2" },
+                    { text: "Seek redemption for your wrath", next: "C3" }
+                ]
+            },
+            {
+                id: "C1",
+                text: "You revel in your legacy. **Ending: The Hero's Pride**",
+                choices: []
+            },
+            {
+                id: "C2",
+                text: "Your regrets haunt you. **Ending: The Burden of Glory**",
+                choices: []
+            },
+            {
+                id: "C3",
+                text: "You find a path to redemption. **Ending: The Redeemed Warrior**",
+                choices: []
+            },
+            // Path D: Challenge the Fates
+            {
+                id: "D",
+                text: "You confront the Fates. Do you…?",
+                choices: [
+                    { text: "Demand a second chance at life", next: "D1" },
+                    { text: "Ask for knowledge of your legacy", next: "D2" },
+                    { text: "Seek to change your fate", next: "D3" }
+                ]
+            },
+            {
+                id: "D1",
+                text: "They refuse, reminding you of your choices. **Ending: The Immutable Fate**",
+                choices: []
+            },
+            {
+                id: "D2",
+                text: "You learn of the impact of your actions. **Ending: The Legacy Revealed**",
+                choices: []
+            },
+            {
+                id: "D3",
+                text: "You are punished for your hubris. **Ending: The Wrath of the Fates**",
+                choices: []
+            },
+            // Path E: Guide the souls
+            {
+                id: "E",
+                text: "You decide to guide the fallen warriors. Do you…?",
+                choices: [
+                    { text: "Help them find peace", next: "E1" },
+                    { text: "Share your stories of valor", next: "E2" },
+                    { text: "Encourage them to seek their own paths", next: "E3" }
+                ]
+            },
+            {
+                id: "E1",
+                text: "You become a beacon of hope. **Ending: The Guardian of Souls**",
+                choices: []
+            },
+            {
+                id: "E2",
+                text: "Your stories inspire them. **Ending: The Legacy of Valor**",
+                choices: []
+            },
+            {
+                id: "E3",
+                text: "You empower them to find their own way. **Ending: The Empowered Spirits**",
+                choices: []
+            },
+            // Path F: Search for meaning
+            {
+                id: "F",
+                text: "You seek the meaning of your legacy. Do you…?",
+                choices: [
+                    { text: "Ask the gods for insight", next: "F1" },
+                    { text: "Reflect on your life’s impact", next: "F2" },
+                    { text: "Seek counsel from other heroes", next: "F3" }
+                ]
+            },
+            {
+                id: "F1",
+                text: "The gods grant you clarity. **Ending: The Enlightened Hero**",
+                choices: []
+            },
+            {
+                id: "F2",
+                text: "You find peace in your contributions. **Ending: The Respected Legacy**",
+                choices: []
+            },
+            {
+                id: "F3",
+                text: "You gain wisdom from their experiences. **Ending: The Council of Heroes**",
+                choices: []
+            },
+            // Path G: Embrace peace
+            {
+                id: "G",
+                text: "You choose to embrace the peace of the afterlife. Do you…?",
+                choices: [
+                    { text: "Accept your fate with grace", next: "G1" },
+                    { text: "Reflect on your life’s journey", next: "G2" },
+                    { text: "Guide others to find peace", next: "G3" }
+                ]
+            },
+            {
+                id: "G1",
+                text: "You find solace in acceptance. **Ending: The Peaceful Warrior**",
+                choices: []
+            },
+            {
+                id: "G2",
+                text: "Your reflections bring you clarity. **Ending: The Wise Sage**",
+                choices: []
+            },
+            {
+                id: "G3",
+                text: "You help others find their peace. **Ending: The Guardian of Tranquility**",
+                choices: []
             }
-        }
+        ]
     },
-    anticlea: {
-        openingPrompt: "You wait in the misty fields of the Underworld. Odysseus approaches the trench of blood and weeps at the sight of you. Your heart aches through the veil of death. Do you…",
-        choices: {
-            A: {
-                prompt: "Call out to him with joy.",
-                next: {
-                    A1: {
-                        prompt: "He rushes toward you. Do you…",
-                        choices: {
-                            A1a: "Try to embrace him.",
-                            A1b: "Smile and recount home's stories.",
-                            A1c: "Warn him about the suitors."
-                        }
-                    }
-                }
-            },
-            B: {
-                prompt: "Say nothing and watch him weep.",
-                next: {
-                    B1: {
-                        prompt: "His grief deepens. Do you…",
-                        choices: {
-                            B1a: "Remain silent still.",
-                            B1b: "Whisper his childhood name.",
-                            B1c: "Turn and walk into the mist."
-                        }
-                    }
-                }
-            },
-            C: {
-                prompt: "Speak of Penelope's faithfulness.",
-                next: {
-                    C1: {
-                        prompt: "Odysseus listens carefully. Do you…",
-                        choices: {
-                            C1a: "Reassure him of her loyalty.",
-                            C1b: "Question her silence.",
-                            C1c: "Ask why he delayed so long."
-                        }
-                    }
-                }
-            },
-            D: {
-                prompt: "Ask about Telemachus.",
-                next: {
-                    D1: {
-                        prompt: "His face lights with pride. Do you…",
-                        choices: {
-                            D1a: "Press him for detail.",
-                            D1b: "Smile and say you saw him in dreams.",
-                            D1c: "Lament never meeting the man he's become."
-                        }
-                    }
-                }
-            },
-            E: {
-                prompt: "Curse the war that took you both.",
-                next: {
-                    E1: {
-                        prompt: "The sky above darkens. Do you…",
-                        choices: {
-                            E1a: "Name the gods who doomed Troy.",
-                            E1b: "Curse Agamemnon and Menelaus.",
-                            E1c: "Ask why he had to leave."
-                        }
-                    }
-                }
-            },
-            F: {
-                prompt: "Beg him to stay.",
-                next: {
-                    F1: {
-                        prompt: "He is torn. Do you…",
-                        choices: {
-                            F1a: "Offer your arms again.",
-                            F1b: "Ask him to abandon his journey.",
-                            F1c: "Tell him this is where he belongs."
-                        }
-                    }
-                }
-            },
-            G: {
-                prompt: "Turn away before he can speak.",
-                next: {
-                    G1: {
-                        prompt: "He calls to you. Do you…",
-                        choices: {
-                            G1a: "Disappear into shadow.",
-                            G1b: "Glance back one last time.",
-                            G1c: "Sit at the banks of the Lethe."
-                        }
-                    }
-                }
-            }
-        }
-    }
 };
 
 function loadCharacterPrompts(character) {
@@ -615,3 +801,29 @@ document.getElementById("sibylButton").addEventListener("click", function() {
 document.getElementById("tiresiasButton").addEventListener("click", function() {
     loadCharacterPrompts("tiresias");
 });
+
+function startJourney(character) {
+    const journey = journeys[character];
+    document.getElementById("character-selection").style.display = "none";
+    document.getElementById("journey").style.display = "block";
+    displayPrompt(journey.prompts[0]);
+}
+
+function displayPrompt(prompt) {
+    document.getElementById("journey-title").innerText = prompt.text;
+    document.getElementById("journey-text").innerText = prompt.text;
+    const choicesDiv = document.getElementById("choices");
+    choicesDiv.innerHTML = ""; // Clear previous choices
+
+    prompt.choices.forEach(choice => {
+        const button = document.createElement("button");
+        button.innerText = choice.text;
+        button.onclick = () => handleChoice(choice.next);
+        choicesDiv.appendChild(button);
+    });
+}
+
+function handleChoice(next) {
+    // Logic to handle the next steps based on the choice made
+    // You can implement the branching logic here
+}
