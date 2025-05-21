@@ -10,7 +10,6 @@ body {
   padding: 0;
 }
 
-
 #game-container {
   max-width: 800px;
   margin: 0 auto;
@@ -27,6 +26,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* CHARACTER DIALOGUE STYLE */
 .character-dialogue {
   display: flex;
   align-items: flex-start;
@@ -48,9 +48,11 @@ body {
   max-width: 420px;
   position: relative;
   font-style: italic;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
-.speech-bubble::after {
+.character-bubble::after {
   content: "";
   position: absolute;
   top: 15px;
@@ -61,6 +63,26 @@ body {
   border-right-color: white;
 }
 
+/* NARRATOR STYLE */
+.narrator-dialogue {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.narrator-bubble {
+  background: rgba(0, 0, 0, 0.7);
+  color: #eee;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-style: normal;
+  font-size: 1.05rem;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* STORY TEXT (non-bubble fallback) */
 #story-text {
   white-space: pre-line;
   min-height: 160px;
@@ -69,6 +91,7 @@ body {
   line-height: 1.5;
 }
 
+/* CONTROLS */
 .controls {
   display: flex;
   justify-content: center;
