@@ -58,7 +58,7 @@ This experience aims to **honor the mythological source texts** while exploring 
 
 ---
 
-### 🧠 Educational Application
+### Educational Application
 
 This project was developed as part of the **"Underworld Journeys in Mythology" unit** in AIS Classics. It demonstrates literary understanding, creative expression, and technical implementation aligned with the following skills:
 
