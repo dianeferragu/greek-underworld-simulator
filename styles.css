@@ -114,3 +114,11 @@ button {
 button:hover {
   background: #444;
 }
+
+.slide {
+    display: none; /* Hide all slides by default */
+}
+
+.slide.active {
+    display: block; /* Show the active slide */
+}

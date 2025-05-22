@@ -64,12 +64,14 @@ const segments = [
 let index = 0;
 let isTyping = false;
 let currentAudio = null;
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const nextButton = document.querySelector('.controls button');
 
 const textBox = document.getElementById("story-text");
 const characterBox = document.getElementById("character-box");
 const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
-const skipBtn = document.getElementById("skip-btn");
 
 function typeText(text, i = 0) {
   isTyping = true;
@@ -125,11 +127,19 @@ function showPreviousSegment() {
   renderSegment();
 }
 
-function skipAnimation() {
-  if (!isTyping) return;
-  isTyping = false;
-  textBox.textContent = segments[index].text;
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
 }
+
+nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+    showSlide(currentSlide);
+});
+
+// Show the first slide initially
+showSlide(currentSlide);
 
 nextBtn.addEventListener("click", showNextSegment);
 prevBtn.addEventListener("click", showPreviousSegment);
