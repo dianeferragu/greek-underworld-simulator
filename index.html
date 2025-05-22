@@ -1,36 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voices from the Underworld</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
 <body>
-  <div id="game-container">
-    <div id="start-screen">
+  <!-- START SCREEN -->
+  <div id="start-screen" class="slide active">
+    <div id="game-container">
       <h1>Voices from the Underworld</h1>
-      <p>Experience the crossing of two epic heroes as they journey through a mythically converged Underworld.</p>
+      <p>Click below to begin your descent...</p>
       <button id="start-btn">Enter the Underworld</button>
     </div>
+  </div>
 
-    <div id="story-screen" style="display:none;">
+  <!-- STORY SCREEN -->
+  <div id="story-screen" class="slide">
+    <div id="game-container">
       <div id="character-box"></div>
       <div id="story-text"></div>
       <div class="controls">
         <button id="prev-btn">⬅ Back</button>
-        <button id="skip-btn">⏩ Skip</button>
         <button id="next-btn">Next ➡</button>
       </div>
     </div>
+  </div>
 
-    <div id="end-screen" style="display:none;">
-      <h2>You have reached the end of the journey.</h2>
-      <p>Aeneas and Odysseus part ways, forever changed by what they’ve seen.</p>
+  <!-- END SCREEN -->
+  <div id="end-screen" class="slide">
+    <div id="game-container">
+      <p class="end-of-story">Your journey has ended. What echoes will you carry?</p>
       <button id="restart-btn">Begin Again</button>
     </div>
   </div>
 
   <script src="storyboard.js"></script>
 </body>
-</html>

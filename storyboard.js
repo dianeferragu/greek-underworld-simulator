@@ -28,7 +28,6 @@ const textBox = document.getElementById("story-text");
 const characterBox = document.getElementById("character-box");
 const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
-const skipBtn = document.getElementById("skip-btn");
 
 function typeText(text, i = 0) {
   isTyping = true;
@@ -77,12 +76,6 @@ function showPreviousSegment() {
   if (isTyping || index <= 0) return;
   index--;
   renderSegment();
-}
-
-function skipAnimation() {
-  if (!isTyping) return;
-  isTyping = false;
-  textBox.textContent = segments[index].text;
 }
 
 startBtn.addEventListener("click", () => {
