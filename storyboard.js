@@ -1,3 +1,5 @@
+
+// ------------- STORY DATA --------------------------------------
 const segments = [
   { speaker: "narrator", text: "Aeneas and Odysseus meet in the Underworld through divine anomaly..." },
   { speaker: "narrator", text: "A breach in time—where Lethe’s waters cross the blood pit—draws both heroes..." },
@@ -16,19 +18,22 @@ const segments = [
   { speaker: "narrator", text: "The breach closes. The pit dries. Aeneas and Odysseus part..." }
 ];
 
+// ------------- STATE & ELEMENTS --------------------------------
 let index = 0;
 let isTyping = false;
 
-const startBtn = document.getElementById("start-btn");
-const restartBtn = document.getElementById("restart-btn");
+const startBtn    = document.getElementById("start-btn");
+const restartBtn  = document.getElementById("restart-btn");
 const startScreen = document.getElementById("start-screen");
 const storyScreen = document.getElementById("story-screen");
-const endScreen = document.getElementById("end-screen");
-const textBox = document.getElementById("story-text");
-const characterBox = document.getElementById("character-box");
-const nextBtn = document.getElementById("next-btn");
-const prevBtn = document.getElementById("prev-btn");
+const endScreen   = document.getElementById("end-screen");
 
+const textBox     = document.getElementById("story-text");
+const characterBox= document.getElementById("character-box");
+const nextBtn     = document.getElementById("next-btn");
+const prevBtn     = document.getElementById("prev-btn");
+
+// ------------- TYPING EFFECT ------------------------------------
 function typeText(text, i = 0) {
   isTyping = true;
   if (i < text.length) {
@@ -39,10 +44,12 @@ function typeText(text, i = 0) {
   }
 }
 
+// ------------- RENDER SEGMENT ----------------------------------
 function renderSegment() {
+  // End of story
   if (index >= segments.length) {
-    storyScreen.style.display = "none";
-    endScreen.style.display = "block";
+    storyScreen.classList.remove("active");
+    endScreen.classList.add("active");
     return;
   }
 
@@ -50,22 +57,22 @@ function renderSegment() {
   textBox.textContent = "";
   typeText(text);
 
+  // Narrator vs character rendering
   if (speaker === "narrator") {
     characterBox.innerHTML = `
       <div class="narrator-dialogue">
         <div class="speech-bubble narrator-bubble">Narrator speaks...</div>
-      </div>
-    `;
+      </div>`;
   } else {
     characterBox.innerHTML = `
       <div class="character-dialogue">
         <img src="photos/${speaker.toLowerCase()}.png" alt="${speaker}" class="character-img" />
         <div class="speech-bubble character-bubble">${text}</div>
-      </div>
-    `;
+      </div>`;
   }
 }
 
+// ------------- NAVIGATION --------------------------------------
 function showNextSegment() {
   if (isTyping || index >= segments.length) return;
   index++;
@@ -78,21 +85,27 @@ function showPreviousSegment() {
   renderSegment();
 }
 
+// ------------- EVENT LISTENERS ---------------------------------
 startBtn.addEventListener("click", () => {
-  startScreen.style.display = "none";
-  storyScreen.style.display = "block";
+  startScreen.classList.remove("active");
+  storyScreen.classList.add("active");
   renderSegment();
 });
 
 restartBtn.addEventListener("click", () => {
-  endScreen.style.display = "none";
+  endScreen.classList.remove("active");
   index = 0;
-  storyScreen.style.display = "block";
+  storyScreen.classList.add("active");
   renderSegment();
 });
 
 nextBtn.addEventListener("click", showNextSegment);
 prevBtn.addEventListener("click", showPreviousSegment);
-skipBtn.addEventListener("click", skipAnimation);
 
-renderSegment();
+// Optional: keyboard navigation (left/right arrows)
+document.addEventListener("keydown", e => {
+  if (storyScreen.classList.contains("active")) {
+    if (e.key === "ArrowRight") showNextSegment();
+    if (e.key === "ArrowLeft")  showPreviousSegment();
+  }
+});
