@@ -90,6 +90,9 @@ body {
   margin-bottom: 20px;
   font-size: 1.1rem;
   line-height: 1.5;
+  background: rgba(255, 255, 255, 0.1); /* Optional: add a background for contrast */
+  padding: 10px;
+  border-radius: 8px;
 }
 
 /* CONTROLS */
@@ -113,6 +116,14 @@ button {
 
 button:hover {
   background: #444;
+}
+
+.end-of-story {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff; /* Adjust color as needed */
 }
 
 .slide {
