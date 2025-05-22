@@ -66,7 +66,8 @@ let isTyping = false;
 let currentAudio = null;
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
-const nextButton = document.querySelector('.controls button');
+const nextButton = document.getElementById('next-button');
+const endOfStory = document.querySelector('.end-of-story');
 
 const textBox = document.getElementById("story-text");
 const characterBox = document.getElementById("character-box");
@@ -131,10 +132,18 @@ function showSlide(index) {
     slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
     });
+    // Show "End of Story" if it's the last slide
+    if (index === slides.length - 1) {
+        nextButton.style.display = 'none'; // Hide the Next button
+        endOfStory.style.display = 'block'; // Show End of Story
+    } else {
+        nextButton.style.display = 'block'; // Show Next button
+        endOfStory.style.display = 'none'; // Hide End of Story
+    }
 }
 
 nextButton.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+    currentSlide = (currentSlide + 1) % slides.length; // Move to the next slide
     showSlide(currentSlide);
 });
 
