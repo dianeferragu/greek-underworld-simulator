@@ -1,7 +1,7 @@
 const segments = [
   {
     speaker: "narrator",
-    text: "Aeneas and Odysseus meet in the Underworld through divine anomaly. While Aeneas journeys with the Sibyl (Aeneid 6) and Odysseus seeks Tiresias’s prophecy (Odyssey 11), their paths mysteriously converge. A breach in time—where Lethe’s waters cross the blood pit—draws both heroes into the same mythic space."
+    text: "Aeneas and Odysseus meet in the Underworld through divine anomaly. While Aeneas journeys with the Sibyl (Aeneid 6) and Odysseus seeks Tiresias's prophecy (Odyssey 11), their paths mysteriously converge. A breach in time—where Lethe's waters cross the blood pit—draws both heroes into the same mythic space."
   },
   {
     speaker: "narrator",
